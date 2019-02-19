@@ -1,12 +1,12 @@
 
 """Library to handle connection with Ambiclimate API."""
-import asyncio
 import json
 import logging
 import time
 
 import aiohttp
 import async_timeout
+import asyncio
 from urllib.parse import urlencode
 
 DEFAULT_TIMEOUT = 10
@@ -99,6 +99,7 @@ class AmbiclimateConnection:
 
 class AmbiclimateDevice:
     """Instance of Ambiclimate device."""
+    # pylint: disable=too-many-public-methods
 
     def __init__(self, room_name, location_name, device_id, ambiclimate_control):
         """Initialize the Ambiclimate device class."""
@@ -290,8 +291,6 @@ class AmbiclimateDevice:
 
 class AmbiclimateOauthError(Exception):
     """AmbiclimateOauthError."""
-
-    pass
 
 
 class AmbiclimateOAuth:
