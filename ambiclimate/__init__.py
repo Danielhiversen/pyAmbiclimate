@@ -1,13 +1,13 @@
 
 """Library to handle connection with Ambiclimate API."""
+import asyncio
 import json
 import logging
 import time
+from urllib.parse import urlencode
 
 import aiohttp
 import async_timeout
-import asyncio
-from urllib.parse import urlencode
 
 DEFAULT_TIMEOUT = 10
 API_ENDPOINT = 'https://api.ambiclimate.com/api/v1/'
