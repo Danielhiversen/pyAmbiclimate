@@ -224,7 +224,7 @@ class AmbiclimateDevice:
                       "temperature": str(int(temperature)),
                       "fan": data['fan'].lower(),
                       "louver": data.get('louver', "auto").lower(),
-                      'swing': data['swing'].lower()
+                      'swing': data.get('swing', "auto").lower(),
                   }}
         return await self.request('device/deployments', params, get=False)
 
