@@ -223,8 +223,8 @@ class AmbiclimateDevice:
                   "feature": {
                       "temperature": str(int(temperature)),
                       "fan": data['fan'].lower(),
-                      "louver": data.get('louver', "auto").lower(),
-                      'swing': data.get('swing', "auto").lower(),
+                      "louver": data.get('louver', "auto").lower() if data.get('louver') else 'auto',
+                      'swing': data.get('swing', "auto").lower() if data.get('swing') else 'oscillate',
                   }}
         return await self.request('device/deployments', params, get=False)
 
