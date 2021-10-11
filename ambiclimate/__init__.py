@@ -294,12 +294,12 @@ class AmbiclimateOAuth:
     OAUTH_AUTHORIZE_URL = 'https://api.ambiclimate.com/oauth2/authorize'
     OAUTH_TOKEN_URL = 'https://api.ambiclimate.com/oauth2/token'
 
-    def __init__(self, client_id, client_secret, redirect_uri, werbsession):
+    def __init__(self, client_id, client_secret, redirect_uri, websession):
         """Create a AmbiclimateOAuth object."""
         self.client_id = client_id
         self.client_secret = client_secret
         self.redirect_uri = redirect_uri
-        self.websession = werbsession
+        self.websession = websession
 
     def get_authorize_url(self):
         """Get the URL to use to authorize this app."""
