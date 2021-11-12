@@ -44,7 +44,7 @@ class AmbiclimateConnection:
 
         url = API_ENDPOINT + command
         try:
-            with async_timeout.timeout(self._timeout):
+            async with async_timeout.timeout(self._timeout):
                 if get:
                     resp = await self.websession.get(url, headers=headers, params=params)
                 else:
@@ -317,7 +317,7 @@ class AmbiclimateOAuth:
                    'grant_type': 'authorization_code'}
 
         try:
-            with async_timeout.timeout(DEFAULT_TIMEOUT):
+            async with async_timeout.timeout(DEFAULT_TIMEOUT):
                 response = await self.websession.post(self.OAUTH_TOKEN_URL,
                                                       data=payload,
                                                       allow_redirects=True)
@@ -347,7 +347,7 @@ class AmbiclimateOAuth:
         refresh_token = token_info.get('refresh_token')
 
         try:
-            with async_timeout.timeout(DEFAULT_TIMEOUT):
+            async with async_timeout.timeout(DEFAULT_TIMEOUT):
                 response = await self.websession.post(self.OAUTH_TOKEN_URL,
                                                       data=payload,
                                                       allow_redirects=True)

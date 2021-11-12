@@ -7,7 +7,7 @@ with open("README.md", 'r') as fp:
 setup(
     name = 'Ambiclimate',
     packages = ['ambiclimate'],
-    install_requires=['aiohttp>=3.0.6', 'async_timeout>=1.4.0'],
+    install_requires=['aiohttp>=3.0.6', 'async_timeout>=3.0.0'],
     version='0.2.1',
     description='A python3 library to communicate with Ambiclimate',
     long_description=long_description,
